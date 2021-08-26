@@ -1,0 +1,3 @@
+[submodule "Android-NDK-Signal-Handler-Module"]
+	path = Android-NDK-Signal-Handler-Module
+	url = https://github.com/konovalov-k/Android-NDK-Signal-Handler-Module
