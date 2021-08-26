@@ -1,2 +1,2 @@
-include ':app'
+include ':app',':Android-NDK-Signal-Handler-Module'
 rootProject.name='NdkPlayground'
