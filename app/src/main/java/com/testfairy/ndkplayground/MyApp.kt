@@ -2,15 +2,18 @@ package com.testfairy.ndkplayground
 
 import android.app.Application
 import android.system.Os
+import ru.arvrlab.ndkcrashhandler.SignalHandler
 
 class MyApp: Application() {
     init {
-        System.loadLibrary("native-lib")
-    }
-    override fun onCreate() {
-        super.onCreate()
-        createLogFile(Os.getppid(), cacheDir.absolutePath + "/")
+        System.loadLibrary("ndk-crash-handler")
     }
 
-    private external fun createLogFile(appId: Int, cacheCrashPath: String)
+    private val signalHandler = SignalHandler()
+
+    override fun onCreate() {
+        super.onCreate()
+
+        signalHandler.createLogFile(Os.getppid(), cacheDir.absolutePath + "/")
+    }
 }
